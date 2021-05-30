@@ -6,7 +6,6 @@ import {
   AiOutlineShopping,
   AiFillApple,
 } from 'react-icons/ai';
-import { FaTimes } from 'react-icons/fa';
 
 const Filter = () => {
   const { setSearchTerm } = useGlobalContext();

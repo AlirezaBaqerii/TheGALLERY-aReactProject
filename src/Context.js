@@ -67,7 +67,6 @@ const AppProvider = ({ children }) => {
         const fetchedData = await response.json();
         const { data } = fetchedData;
         if (data) {
-          console.log(data);
           const newPaintings = data.map((item) => {
             const { id, title, image_id, artist_title, artist_display } = item;
             return { id, title, image_id, artist_title, artist_display };

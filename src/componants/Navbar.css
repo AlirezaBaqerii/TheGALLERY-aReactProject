@@ -94,3 +94,12 @@ a {
   background-color: transparent;
   color: #ffffff;
 }
+
+/* little nav*/
+.menu-btn {
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  padding-bottom: 0;
+}
