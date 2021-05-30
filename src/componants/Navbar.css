@@ -1,0 +1,96 @@
+.nav {
+  position: fixed;
+  /* top: -200px; */
+  display: none;
+  background-color: #222;
+  color: #ffffff;
+  width: 100%;
+  /* display: flex; */
+  transition: all 0.9 ease;
+  justify-content: center;
+  z-index: 1;
+}
+.show-nav {
+  display: flex;
+  transition: all 0.9 ease;
+  top: 0;
+}
+
+.nav-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  background-color: transparent;
+  padding: 5px;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.logo-border {
+  border: #ffffff solid 5px;
+  padding: 3px 3px;
+}
+
+.logo-border h3 {
+  margin: 0;
+}
+
+.nav-list ul {
+  list-style: none;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list ul li {
+  display: table-cell;
+  padding: 2px 4px;
+  margin-right: 20px;
+  cursor: pointer;
+  border-bottom: transparent 4px solid;
+  transition: all 0.5;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-list ul li:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #ffffff;
+  transition: width 0.4s ease 0s, left 0.4s ease 0s;
+  width: 0;
+}
+.nav-list ul li:hover:after {
+  width: 50%;
+  left: 25%;
+  right: 25%;
+}
+
+.signup-btn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  background-color: #ffffff;
+  color: #222;
+  border: #ffffff 2px solid;
+  cursor: pointer;
+  margin-left: 40px;
+  transition: all 0.3s ease;
+}
+.signup-btn:hover {
+  background-color: transparent;
+  color: #ffffff;
+}

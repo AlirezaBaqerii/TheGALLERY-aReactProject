@@ -1,0 +1,173 @@
+.hero {
+  position: relative;
+  top: 74px;
+  width: 100%;
+  /* height: 60%; */
+}
+
+.hero-container {
+  background-image: url('../media/CAPPELLA_SISTINA_Ceiling_sunScreen.jpg');
+
+  display: flex;
+
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.hero-text-container {
+  display: flex;
+  margin: auto auto;
+}
+
+.hero-text {
+  color: #f3efef;
+  text-align: center;
+  font-size: 70px;
+  margin: 0;
+}
+
+/* .the-gallery-container {
+  border: 3px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+} */
+
+.god-adam {
+  display: flex;
+  column-gap: 10px;
+  position: relative;
+  margin: 100px 20px 20px;
+}
+
+.adam {
+  background-image: url('../media/theAdam.jpg');
+  width: 50%;
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.god {
+  background-image: url('../media/theGod.jpg');
+  width: 50%;
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.adam h1,
+.god h1 {
+  font-size: 70px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* .god h1 {
+  font-size: 70px;
+  text-align: center;
+  margin-top: 10px;
+} */
+
+@media screen and (max-width: 950px) {
+  .hero-text {
+    color: #f3efef;
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+  }
+
+  .god,
+  .adam {
+    height: 400px;
+  }
+
+  .adam h1,
+  .god h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .god,
+  .adam {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .hero-text {
+    color: #f3efef;
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+  }
+
+  .god-adam {
+    margin: 85px 0 10px;
+    gap: 5px;
+  }
+
+  .god,
+  .adam {
+    height: 250px;
+  }
+
+  .adam h1,
+  .god h1 {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .hero-text {
+    color: #f3efef;
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+  }
+
+  .god,
+  .adam {
+    height: 200px;
+  }
+
+  .adam h1,
+  .god h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .hero-container {
+    background-image: url('../media/CAPPELLA_SISTINA_Ceiling_sunScreen.jpg');
+    height: 600px;
+  }
+  .hero-text {
+    color: #f3efef;
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+  }
+
+  .god,
+  .adam {
+    height: 145px;
+  }
+
+  .adam h1,
+  .god h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}

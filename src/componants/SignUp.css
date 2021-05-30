@@ -1,0 +1,23 @@
+.sign-up-section {
+  font-family: Roboto;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-up-container h1 {
+  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+.sign-up-container form label {
+  display: flex;
+  flex-direction: column;
+}
+
+p a {
+  color: black;
+  text-decoration: underline;
+}

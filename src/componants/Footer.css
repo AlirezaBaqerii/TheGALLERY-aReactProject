@@ -1,0 +1,36 @@
+.footer-links {
+  font-family: Roboto;
+
+  color: #8c8c8c;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #222222;
+}
+
+.footer-links ul {
+  padding: 0 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  cursor: pointer;
+}
+
+.footer-links li {
+  font-weight: 400;
+  padding: 2px 10px;
+
+  border-right: 1px solid #4a4949;
+}
+
+.last-one {
+  /* padding: 2px 10px; */
+  font-family: Roboto;
+  color: #8c8c8c;
+}
+
+.footer-links p {
+  font-size: 15px;
+  padding: 2px 46px;
+  border-top: 1px solid #4a4949;
+}
