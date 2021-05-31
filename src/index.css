@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-/* * {
+* {
   margin: 0;
-  width: 100%;
-  height: 100%;
-} */
+}
 
 body {
+  height: 100vh;
   margin: 0;
   width: 100%;
   /* height: 100%; */

@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Navbar from './componants/Navbar';
 import Footer from './componants/Footer';
 import SignUpPage from './pages/SignUpPage';
+import Painting from './pages/Painting';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path='/sign-up'>
             <SignUpPage />
+          </Route>
+          <Route path='/artworks/:id'>
+            <Painting />
           </Route>
         </Switch>
         <Footer />
