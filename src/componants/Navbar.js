@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaTimes, FaBars } from 'react-icons/fa';
+import { useGlobalContext } from '../Context';
 import './Navbar.css';
 
 const Navbar = () => {

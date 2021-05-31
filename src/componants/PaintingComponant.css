@@ -1,0 +1,40 @@
+.articale {
+  position: absolute;
+  top: 74px;
+}
+.exit-btn {
+  position: fixed;
+  right: 10px;
+  top: 79px;
+  background-color: rgba(255, 255, 255, 0.34);
+  color: #fff;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.info {
+  padding: 5px 15px;
+}
+
+.title h1 {
+  font-size: 15px;
+  color: #111;
+}
+
+.title h4 {
+  font-size: 12px;
+}
+
+.a-info {
+  display: flex;
+}
+.a-info h4 {
+  font-size: 12px;
+  margin: 5px;
+}
+.info-type {
+  font-size: 15px;
+  background-color: #e4e3e3;
+  border-radius: 5px;
+  margin-right: 10px;
+}

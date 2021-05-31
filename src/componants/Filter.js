@@ -14,7 +14,6 @@ const Filter = () => {
   const searching = (e) => {
     e.preventDefault();
     setSearchTerm(searchValue.current.value);
-    console.log(searchValue.current.value);
   };
 
   return (

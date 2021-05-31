@@ -15,10 +15,7 @@ const AppProvider = ({ children }) => {
   const [singlePainting, setSinglePainting] = useState([]);
 
   useEffect(() => {
-    // if (singlePainting && paintings) {
-    console.log('singlePainting');
     setPaintings([...paintings, singlePainting]);
-    // console.log(paintings);
   }, [singlePainting]);
 
   //fetching
@@ -36,7 +33,6 @@ const AppProvider = ({ children }) => {
           const { api_link } = item;
           return { api_link };
         });
-        console.log(arrResault);
 
         arrResault.map(async (item) => {
           const response = await fetch(item.api_link);
@@ -61,15 +57,30 @@ const AppProvider = ({ children }) => {
     }
 
     if (!searchTerm) {
-      console.log('abaraham ');
       try {
         const response = await fetch(`${url}`);
         const fetchedData = await response.json();
         const { data } = fetchedData;
         if (data) {
           const newPaintings = data.map((item) => {
-            const { id, title, image_id, artist_title, artist_display } = item;
-            return { id, title, image_id, artist_title, artist_display };
+            const {
+              id,
+              title,
+              image_id,
+              artist_display,
+              category_titles,
+              classification_title,
+              place_of_origin,
+            } = item;
+            return {
+              id,
+              title,
+              image_id,
+              artist_display,
+              category_titles,
+              classification_title,
+              place_of_origin,
+            };
           });
           setPaintings(newPaintings);
 
