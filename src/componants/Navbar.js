@@ -1,120 +1,110 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaTimes, FaBars } from 'react-icons/fa';
-import { useGlobalContext } from '../Context';
+// import { useGlobalContext } from '../Context';
 import './Navbar.css';
 
 const Navbar = () => {
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
-  // const navbarStyles = {
-  //   position: 'fixed',
-  //   height: '60px',
-  //   width: '100%',
-  //   backgroundColor: 'grey',
-  //   textAlign: 'center',
-  // };
-  const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-    setTimeout(() => {
-      // console.log(`currentScrollPos: ${currentScrollPos}`);
-      setVisible(
-        (prevScrollPos > currentScrollPos &&
-          prevScrollPos - currentScrollPos > 70) ||
-          currentScrollPos < 30
-      );
-      // console.log();
-      // console.log(`currPos: ${currentScrollPos}`);
-      // console.log(`prevPos: ${prevScrollPos}`);
-      // console.log('-----------');
-      setPrevScrollPos(currentScrollPos);
-    }, 150);
-  };
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollPos, visible, handleScroll]);
+  const [showLittleNav, setShowLittleNav] = useState(true);
+  const [width, setWidth] = useState(window.innerWidth);
 
-  const [showBigNav, setShowBigNav] = useState();
-
-  const getScreenWidth = () => {
-    if (window.innerWidth > 700) {
-      setShowBigNav(true);
+  const handleResize = () => {
+    if (window.innerWidth <= 950) {
+      setShowLittleNav(true);
     } else {
-      setShowBigNav(false);
+      setShowLittleNav(false);
     }
   };
 
   useEffect(() => {
-    window.addEventListener('resize', getScreenWidth);
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
-  if (showBigNav) {
-    return <BigNavbar visible={visible} />;
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+  }, []);
+
+  if (showLittleNav) {
+    return <LittleNavbar />;
   }
-  return <LittleNav visible={visible} />;
-};
 
-const LittleNav = ({ visible }) => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  return (
-    <>
-      <nav className={`${visible ? 'nav show-nav' : 'nav'}`}>
-        <div className='nav-container'>
-          <div className='logo'>
-            <Link to='/'>
-              <div className='logo-border'>
-                <h3>THE</h3>
-                <h3> GALLERY</h3>
-              </div>
-            </Link>
-          </div>
-          <div>
-            <button className='menu-btn' onClick={() => setShowMenu(!showMenu)}>
-              {showMenu ? <FaTimes /> : <FaBars />}
-            </button>
-          </div>
-        </div>
-      </nav>
-    </>
-  );
-};
-
-const BigNavbar = ({ visible }) => {
-  return (
-    <>
-      <nav className={`${visible ? 'nav show-nav' : 'nav'}`}>
-        <div className='nav-container'>
-          <div className='logo'>
-            <Link to='/'>
-              <div className='logo-border'>
-                <h3>THE</h3>
-                <h3> GALLERY</h3>
-              </div>
-            </Link>
-          </div>
-          <div className='nav-list'>
-            <ul>
-              <li>
-                <Link to=''> About.</Link>
-              </li>
-              <li>
-                <Link to=''>Ticket</Link>
-              </li>
-              <li>
-                <Link to=''>Contact</Link>
-              </li>
-              <li>
-                <Link to=''>Other</Link>
-              </li>
-              <button className='signup-btn'>Sign Up</button>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </>
-  );
+  return <BigNavbar />;
 };
 
 export default Navbar;
+
+const LittleNavbar = () => {
+  const [toggle, setToggle] = useState(false);
+  return (
+    <>
+      <Menu toggle={toggle} />
+      <nav>
+        <div className='nav-container'>
+          <div className='logo'>
+            <Link to='/'>THE GALLERY</Link>
+          </div>
+          <button className='toggle-btn' onClick={() => setToggle(!toggle)}>
+            {toggle ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+      </nav>
+    </>
+  );
+};
+
+const Menu = ({ toggle }) => {
+  return (
+    <section className={`${toggle ? 'menu menu-active' : 'menu'}`}>
+      <div className='menu-container'>
+        <ul className='menu-links'>
+          <li>
+            <Link to='/about'>About</Link>
+          </li>
+          <li>
+            <Link to='/ticket'>Ticket</Link>
+          </li>
+          <li>
+            <Link to='/contact'>Contact</Link>
+          </li>
+          <li>
+            <Link to='#'>Other</Link>
+          </li>
+        </ul>
+        <div className='btn-container'>
+          <button className='signup-btn signup-menu'>Sign in</button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const BigNavbar = () => {
+  return (
+    <nav>
+      <div className='nav-container'>
+        <div className='logo'>
+          <Link to='/'>THE GALLERY</Link>
+        </div>
+        <ul className='nav-links'>
+          <li>
+            <Link to='/about'>About</Link>
+          </li>
+          <li>
+            <Link to='/ticket'>Ticket</Link>
+          </li>
+          <li>
+            <Link to='/contact'>Contact</Link>
+          </li>
+          <li>
+            <Link to='#'>Other</Link>
+          </li>
+        </ul>
+        <button className='signup-btn'>Sign in</button>
+      </div>
+    </nav>
+  );
+};

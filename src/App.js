@@ -24,7 +24,7 @@ function App() {
             <Painting />
           </Route>
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </>
   );
