@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  top: 74px;
+  top: 0px;
   width: 100%;
   /* height: 60%; */
 }
@@ -10,7 +10,7 @@
 
   display: flex;
 
-  height: 500px; /* You must set a specified height */
+  height: 600px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
@@ -38,7 +38,7 @@
   display: flex;
   column-gap: 10px;
   position: relative;
-  margin: 100px 20px 20px;
+  margin: 10px 20px 20px;
 }
 
 .adam {
@@ -109,7 +109,7 @@
   }
 
   .god-adam {
-    margin: 85px 0 10px;
+    margin: 10px 0 10px;
     gap: 5px;
   }
 
