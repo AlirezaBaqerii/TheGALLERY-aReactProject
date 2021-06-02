@@ -150,7 +150,7 @@
 @media screen and (max-width: 400px) {
   .hero-container {
     background-image: url('../media/CAPPELLA_SISTINA_Ceiling_sunScreen.jpg');
-    height: 600px;
+    height: 700px;
   }
   .hero-text {
     color: #f3efef;
