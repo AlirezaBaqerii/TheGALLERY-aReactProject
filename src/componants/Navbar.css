@@ -197,7 +197,7 @@ a {
   top: -2000px;
   width: 100%;
   z-index: -1;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease;
 }
 
 .menu-active {

@@ -31,7 +31,7 @@ const PaintingComponant = () => {
     classification_title,
     place_of_origin,
   } = painting;
-  console.log(title);
+
   return (
     <article className='articale'>
       <Link to='/'>

@@ -96,6 +96,8 @@ const AppProvider = ({ children }) => {
     FetchPaintings();
   }, [searchTerm]);
 
+  const [toggle, setToggle] = useState(false);
+
   return (
     <AppContext.Provider
       value={{
@@ -103,6 +105,8 @@ const AppProvider = ({ children }) => {
         setLoading,
         paintings,
         setSearchTerm,
+        toggle,
+        setToggle,
       }}
     >
       {children}
