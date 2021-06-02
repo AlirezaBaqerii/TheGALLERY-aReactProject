@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { FaTimes, FaBars } from 'react-icons/fa';
 // import { useGlobalContext } from '../Context';
 import './Navbar.css';
+import { useGlobalContext } from '../Context';
 
 const Navbar = () => {
-  const [showLittleNav, setShowLittleNav] = useState(true);
-  const [width, setWidth] = useState(window.innerWidth);
+  const [showLittleNav, setShowLittleNav] = useState(false);
 
   const handleResize = () => {
     if (window.innerWidth <= 950) {
@@ -16,15 +16,16 @@ const Navbar = () => {
     }
   };
 
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleResize = () => setWidth(window.innerWidth);
+  //   window.addEventListener('resize', handleResize);
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
 
   useEffect(() => {
+    handleResize();
     window.addEventListener('resize', handleResize);
   }, []);
 
@@ -38,10 +39,10 @@ const Navbar = () => {
 export default Navbar;
 
 const LittleNavbar = () => {
-  const [toggle, setToggle] = useState(false);
+  const { toggle, setToggle } = useGlobalContext();
   return (
     <>
-      <Menu toggle={toggle} />
+      <Menu toggle={toggle} setToggle={setToggle} />
       <nav>
         <div className='nav-container'>
           <div className='logo'>
@@ -56,12 +57,15 @@ const LittleNavbar = () => {
   );
 };
 
-const Menu = ({ toggle }) => {
+const Menu = ({ toggle, setToggle }) => {
+  // // console.log(setToggle);
+  // const [showMenu, setShowMenu] = useState(true);
+
   return (
     <section className={`${toggle ? 'menu menu-active' : 'menu'}`}>
       <div className='menu-container'>
         <ul className='menu-links'>
-          <li>
+          <li onClick={() => setToggle(false)}>
             <Link to='/about'>About</Link>
           </li>
           <li>
